@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<button type="button" onclick="rand();" data-toggle="modal" data-target="#myModal" data-target="demo" > Click To Know the Winner</button>
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-tittle">The Lottery Winner is</h3>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body" id="modal_body"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal">close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p id="demo"></p>
+	<script type="text/javascript">
+		
+		function rand(){
+			var array = ["11234","11125","11789","11689","11758","11657"];
+		    var random = Math.floor(Math.random()*array.length);
+		    var result = array[random];
+			document.getElementById("demo").innerHTML = (result); 
+			document.getElementById("demo").style.color = "red";
+			console.log(result);
+			$("#modal_body").html(result);
+		}
+	</script>
+</body>
+</html>
